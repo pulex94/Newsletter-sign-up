@@ -98,3 +98,44 @@ button:hover {
     rgba(233, 114, 28, 1) 57%
   );
 }
+
+.hide {
+  width: 1020px;
+  height: 720px;
+  background-color: white;
+  border-radius: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.successLoginHide {
+  display: none;
+}
+
+.successLoginShow {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+.successLoginShow button {
+  margin: 20px;
+  width: 200px;
+  margin: auto;
+}
+
+.successLoginShow img {
+  width: 50px;
+  margin-left: 20px;
+}
+
+.successLoginShow h1,
+.successLoginShow p {
+  margin: 20px;
+}

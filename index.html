@@ -26,11 +26,14 @@
           <li>Measuring to ensure updates are a success</li>
           <li>And much more!</li>
         </ul>
-        <div style="display: flex; flex-direction: column">
+        <form style="display: flex; flex-direction: column">
           <p style="font-size: 14px">Email address</p>
-          <input />
-        </div>
-        <button>Subscribe to monthly newsletter</button>
+          <input id="inputEmail" type="email" required />
+          <br />
+          <button type="button" onclick="checkSubmit()">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
       </div>
       <div class="img-div">
         <div class="svg-container">
@@ -296,5 +299,39 @@
         </div>
       </div>
     </div>
+    <div class="successLoginHide">
+      <img src="./assets/images/icon-list.svg" />
+      <h1>
+        Thanks for <br />
+        subscribing!
+      </h1>
+      <p id="successText"></p>
+      <button onclick="hideForm()">Dissmiss Message</button>
+    </div>
+    <script>
+      function hideForm() {
+        let container = document.getElementsByClassName("container");
+        let successLoginHide =
+          document.getElementsByClassName("successLoginHide");
+        container[0].classList.remove("hide");
+        successLoginHide[0].classList.add("successLoginHide");
+        successLoginHide[0].classList.remove("successLoginShow");
+      }
+
+      function checkSubmit() {
+        let email = document.getElementById("inputEmail").value;
+
+        let container = document.getElementsByClassName("container");
+        let successLoginHide =
+          document.getElementsByClassName("successLoginHide");
+        let successText = (document.getElementById("successText").innerHTML =
+          "A confirmation email has been sent to " +
+          email +
+          ". Please open it and click the button to confirm your subscription.");
+
+        container[0].classList.add("hide");
+        successLoginHide[0].classList.add("successLoginShow");
+      }
+    </script>
   </body>
 </html>
